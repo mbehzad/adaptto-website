@@ -1,1 +1,0 @@
-var e=".embed-newsletter {\n  padding: 20px 40px 40px 0;\n  min-height: 300px;\n}\n\n.embed-newsletter .usercentrics-placeholder {\n  width: 100%;\n  height: 300px;\n}\n";export{e as css,e as default};
