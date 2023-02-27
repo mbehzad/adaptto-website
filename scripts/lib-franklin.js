@@ -352,8 +352,14 @@ export async function loadBlock(block) {
       const cssLoaded = import(`../blocks/${blockName}/${blockName}.css`, { assert: { type: 'css' }}).then(({ default: sheet }) => {
         // if import assertion is run natively in a browser supporting it,
         // the imported module will be StyleSheet.
-        // if run via bundler, it will automatically create the style tag and return `undefined`
-        if (sheet instanceof CSSStyleSheet) { document.adoptedStyleSheets = [sheet]; }
+        // if run via bundler, it will be the css content as text
+        if (sheet instanceof CSSStyleSheet) {
+          document.adoptedStyleSheets = [sheet];
+        } else {
+          const style = document.createElement('style');
+          style.appendChild(document.createTextNode(sheet));
+          document.head.appendChild(style);
+        }
       });
       const decorationComplete = new Promise((resolve) => {
         (async () => {
