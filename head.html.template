@@ -3,7 +3,7 @@
   lib-franklin is already loaded by script.js. and doensn't necceserly nedds to be included here
  <script src="/target/lib-franklin.js" type="module"></script>
  -->
-<script src="/${scriptsFileName}.js" type="module"></script>
+<script src="/${scriptsFileName}" type="module"></script>
 <link rel="stylesheet" href="/styles/styles.css">
 <link rel="shortcut icon" href="/resources/img/adaptto-favicon.ico"/>
 <link rel="icon" type="image/svg+xml" href="/resources/img/adaptto-favicon.svg">
