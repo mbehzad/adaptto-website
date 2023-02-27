@@ -1,0 +1,1 @@
+import{a as t,w as a,x as e}from"./scripts-044ccee4.js";async function o(o){const c=t(o,"p"),n=a(document.location.pathname),s=e(document.location.pathname),p=t(c,"a");p.href=n,p.textContent=n===s?"Back to schedule":"Back to parent"}export{o as default};
