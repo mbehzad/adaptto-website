@@ -9,7 +9,8 @@
     "build": "rimraf target && rollup -c",
     "lint:js": "eslint .",
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
-    "lint": "npm run lint:js && npm run lint:css"
+    "lint": "npm run lint:js && npm run lint:css",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
