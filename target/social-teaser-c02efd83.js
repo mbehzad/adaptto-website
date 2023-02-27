@@ -1,1 +1,0 @@
-var n=".social-teaser p {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 3px;\n}\n\n.social-teaser .icon svg {\n  width: 45px;\n  height: 45px;\n  margin-right: 3px;\n}\n";export{n as css,n as default};
