@@ -224,9 +224,8 @@ async function loadLazy(doc) {
 
   import('../styles/lazy-styles.css', { assert: { type: 'css' }}).then(({ default: sheet }) => {
     if (sheet instanceof CSSStyleSheet) {
-      document.adoptedStyleSheets = [sheet];
-    }
-    else {
+      document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
+    } else {
       const style = document.createElement('style');
       style.appendChild(document.createTextNode(sheet));
       document.head.appendChild(style);

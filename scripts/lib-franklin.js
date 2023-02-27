@@ -354,7 +354,7 @@ export async function loadBlock(block) {
         // the imported module will be StyleSheet.
         // if run via bundler, it will be the css content as text
         if (sheet instanceof CSSStyleSheet) {
-          document.adoptedStyleSheets = [sheet];
+          document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
         } else {
           const style = document.createElement('style');
           style.appendChild(document.createTextNode(sheet));
