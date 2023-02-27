@@ -4,6 +4,8 @@ const dynamicImportVars = require('@rollup/plugin-dynamic-import-vars');
 const terser = require('@rollup/plugin-terser');
 const html = require('@rollup/plugin-html');
 const styles = require('rollup-plugin-styles');
+const postcssNesting = require('postcss-nesting');
+const postcssCustomMedia = require('postcss-custom-media');
 
 module.exports = {
   preserveEntrySignatures: true,
@@ -43,6 +45,8 @@ module.exports = {
       url: false, // ignore e.g. url(./font)
       minimize: true, // minify css
       plugins: [
+        postcssNesting(),
+        postcssCustomMedia(),
       ],
     }),
     // allows generating assets from import(`path/${var}.js`)
