@@ -3,7 +3,7 @@
   --base-unit: 0.625em; /* ^= 10px; */
   --nav-height: 177px;
   --content-width: 1000px;
-  
+
   /* colors */
   --color-light: #fafafa;
   --color-dark: #333;
@@ -14,7 +14,7 @@
   --color-highlight-1: #00A0EE;
   --color-highlight-2: #66CEF5;
   --color-cta: #00A0EE;
-  
+
   /* fonts */
   --font-bold: 'SignikaBold', helvetica, arial, sans-serif;
   --font-semi: 'SignikaSemibold', helvetica, arial, sans-serif;
@@ -337,4 +337,8 @@ main .usercentrics-consent-dialog button.accept {
 main .usercentrics-loading-spinner {
   width: 100%;
   height: 100%;
+}
+
+.nothing {
+  display: none;
 }

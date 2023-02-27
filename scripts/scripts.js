@@ -247,3 +247,5 @@ async function loadPage() {
 }
 
 loadPage();
+
+console.log('1');
