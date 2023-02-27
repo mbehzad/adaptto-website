@@ -4,7 +4,7 @@
  <script src="/target/lib-franklin.js" type="module"></script>
  -->
 <script src="/${scriptsFileName}.js" type="module"></script>
-<link rel="stylesheet" href="/styles/styles.css">
+<link rel="stylesheet" href="/${stylesFileName}">
 <link rel="shortcut icon" href="/resources/img/adaptto-favicon.ico"/>
 <link rel="icon" type="image/svg+xml" href="/resources/img/adaptto-favicon.svg">
 <link rel="apple-touch-icon" href="/resources/img/apple-touch-icon-57-57.png">

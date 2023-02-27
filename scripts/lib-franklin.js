@@ -349,8 +349,11 @@ export async function loadBlock(block) {
     block.setAttribute('data-block-status', 'loading');
     const blockName = block.getAttribute('data-block-name');
     try {
-      const cssLoaded = new Promise((resolve) => {
-        loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`, resolve);
+      const cssLoaded = import(`../blocks/${blockName}/${blockName}.css`, { assert: { type: 'css' }}).then(({ default: sheet }) => {
+        // if import assertion is run natively in a browser supporting it,
+        // the imported module will be StyleSheet.
+        // if run via bundler, it will automatically create the style tag and return `undefined`
+        if (sheet instanceof CSSStyleSheet) { document.adoptedStyleSheets = [sheet]; }
       });
       const decorationComplete = new Promise((resolve) => {
         (async () => {

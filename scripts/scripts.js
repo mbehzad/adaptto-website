@@ -9,7 +9,6 @@ import {
   decorateTemplateAndTheme,
   waitForLCP,
   loadBlocks,
-  loadCSS,
   getMetadata,
 } from './lib-franklin.js';
 import { decorateAnchors } from './services/LinkHandler.js';
@@ -223,7 +222,9 @@ async function loadLazy(doc) {
   loadHeader(doc.querySelector('header .header-container'));
   loadFooter(doc.querySelector('footer'));
 
-  loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+  import('../styles/lazy-styles.css', { assert: { type: 'css' }}).then(({ default: sheet }) => {
+    if (sheet instanceof CSSStyleSheet) { document.adoptedStyleSheets = [sheet]; }
+  });
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
