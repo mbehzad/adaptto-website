@@ -1,5 +1,4 @@
 const dynamicImportVars = require('@rollup/plugin-dynamic-import-vars');
-const terser = require('@rollup/plugin-terser');
 
 module.exports = {
   preserveEntrySignatures: true,
@@ -13,7 +12,6 @@ module.exports = {
     dir: 'target',
     format: 'esm',
     plugins: [
-      terser(), // minifies the JS
     ],
   },
   plugins: [
